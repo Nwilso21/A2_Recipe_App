@@ -28,3 +28,4 @@ class RecipeModelTest(TestCase):
         max_length = Recipe._meta.get_field('difficulty').max_length
 
         self.assertEqual(max_length,12)
+

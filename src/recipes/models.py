@@ -5,7 +5,6 @@ from django.shortcuts import reverse
 
 
 class Recipes(models.Model):
-    recipe_id=models.IntegerField()
     name=models.CharField(max_length=120)
     cooking_time=models.IntegerField()
     ingredients=models.CharField(max_length=255)

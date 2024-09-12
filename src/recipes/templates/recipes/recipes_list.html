@@ -1,3 +1,8 @@
+<ul></ul>
+   <li><a href="/home">Home</a></li>
+   <li><a href="/search">Search For a Recipe</a></li>
+ </ul>
+
 <style>
    table {background-color: blanchedalmond;
          color : brown;
@@ -35,6 +40,7 @@
 </header>
 
 
+
 <h1>Recipe list</h1>        {% comment%} HTML tag for heading  {% endcomment%}
 
 <table border="1" cellpadding="5" cellspacing = "5">    {% comment%} start of table  {% endcomment%}
@@ -43,7 +49,7 @@
    </tr>
    {% for object in object_list %} {% comment%} now go through the list element-by-element  {% endcomment%}
    <tr>
-      <td><a href ="{{object.get_absolute_url}}"> {% comment%} add links to book names  {% endcomment%}
+      <td><a href ="{{object.get_absolute_url}}"> {% comment%} add links to recipe names  {% endcomment%}
       {{object.name}}
       </a></td>
       <td><img src="{{object.pic.url}}" width="150" height="200" /></td>

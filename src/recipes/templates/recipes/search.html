@@ -1,0 +1,46 @@
+<ul>
+   <li><a href="/home">Home</a></li>
+   <li><a href="/list">Recipe List</a></li>
+ </ul>
+
+<style>
+   body {
+      background-color: blanchedalmond;
+      color : brown
+   }
+
+   button {
+  border: none;
+  color: blanchedalmond;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-color: brown;
+}
+</style>
+
+<h1> Search for a Recipe by difficulty </h1>
+<h2> Options are : Easy, Medium, Intermediate, and Hard</h2>
+<a href ="/list">
+   <button>CLICK HERE TO SEE ALL RECIPES</button>
+</a>
+
+<hr>
+<form action="" method="POST">
+   {% csrf_token %}
+   {{form}}
+   <button type="submit" >search</button>
+
+</form> 
+
+{% if recipes_df %}
+   {{recipes_df|safe}}
+   <br>
+   <img src="data:image/png;base64, {{chart|safe}}">
+{% else %}
+   <h3> no data</h3>
+{% endif %}
